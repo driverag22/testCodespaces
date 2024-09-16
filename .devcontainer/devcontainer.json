@@ -1,0 +1,16 @@
+{
+    "name": "My Codespace",
+    "build": {
+        "dockerfile": "codespace"
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "waterproof-tue.waterproof"
+            ]
+        }
+    },
+    "settings": {
+        "waterproof.path": "~/.opam/waterproof/bin/coq-lsp"
+    }
+}
