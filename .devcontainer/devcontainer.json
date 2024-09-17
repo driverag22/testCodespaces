@@ -1,8 +1,7 @@
 {
     "name": "My Codespace",
     "build": {
-        "dockerfile": "codespace",
-        "context": ".."
+        "dockerfile": "codespace.Dockerfile"
     },
     "customizations": {
         "vscode": {
