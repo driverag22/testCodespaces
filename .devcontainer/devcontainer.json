@@ -11,6 +11,6 @@
         }
     },
     "settings": {
-        "waterproof.path": "/home/vscode/.opam/waterproof/bin/coq-lsp"
+        "waterproof.path": "/root/.opam/waterproof/bin/coq-lsp"
     }
 }
