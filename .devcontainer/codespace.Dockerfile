@@ -7,14 +7,12 @@ RUN apk update && apk add --no-cache \
     curl \
     build-base \
     git \
-    software-properties-common \
-    opam
+    opam \
 
 # Initialize opam and configure the environment
 RUN opam init --disable-sandboxing --bare -y && \
     eval $(opam env) && \
-    opam switch list-available && \
-    opam switch create waterproof 4.14.1+options && \
+    opam switch create waterproof 4.14.1+options -y && \
     eval $(opam env --switch=waterproof)
 
 # Install Coq LSP and pin waterproof repository
