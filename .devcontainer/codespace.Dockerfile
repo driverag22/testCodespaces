@@ -7,7 +7,9 @@ RUN apk update && apk add --no-cache \
     curl \
     build-base \
     git \
-    opam \
+    gmp-dev \
+    pkgconfig \
+    opam
 
 # Initialize opam and configure the environment
 RUN opam init --disable-sandboxing --bare -y && \
@@ -20,5 +22,4 @@ RUN opam install coq-lsp.0.1.8+8.17 -y && \
     opam pin add https://github.com/impermeable/coq-waterproof.git#2.1.0+8.17 -y
 
 # Ensure opam environment is properly set up for the default user
-RUN eval $(opam env) && \
-    echo "eval \$(opam env)" >> /home/vscode/.bashrc
+RUN eval $(opam env)
