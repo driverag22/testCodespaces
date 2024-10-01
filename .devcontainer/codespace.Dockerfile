@@ -17,7 +17,7 @@ RUN opam init --disable-sandboxing --bare -y && \
 
 # Install Coq LSP and pin waterproof repository
 RUN opam install coq-lsp.0.1.8+8.17 -y && \
-    opam pin add https://github.com/impermeable/coq-waterproof.git#2.1.1+8.17 -y
+    opam pin add https://github.com/impermeable/coq-waterproof.git#2.1.0+8.17 -y
 
 # Ensure opam environment is properly set up for the default user
 RUN eval $(opam env) && \
