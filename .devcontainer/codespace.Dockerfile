@@ -1,15 +1,18 @@
-# Use an Alpine Linux base image
-FROM alpine:latest
+# Use an Ubuntu base image
+FROM ubuntu:latest
 
 # Install essential dependencies for building and installing opam
-RUN apk update && apk add --no-cache \
+RUN apt-get update && apt-get install -y --no-install-recommends \
     bash \
     curl \
-    build-base \
+    ca-certificates \
+    build-essential \
     git \
-    gmp-dev \
-    pkgconfig \
-    opam
+    libgmp-dev \
+    pkg-config \
+    opam && \
+    # Clear cache
+    rm -rf /var/lib/apt/lists/*
 
 # Initialize opam and configure the environment
 RUN opam init --disable-sandboxing --bare -y && \
